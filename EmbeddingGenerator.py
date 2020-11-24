@@ -14,7 +14,6 @@ import tensorflow.keras.backend as K
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 
-
 class EmbeddingsGenerator:
     def __init__(self, train_users, data):
         print('train_users: ', train_users)
@@ -32,16 +31,19 @@ class EmbeddingsGenerator:
         user_ix = [num for num in range(len(user_uniq))]
         #user_ix_uniq = dict(zip(user_ix, user_uniq))
         user_uniq_ix = dict(zip(user_uniq, user_ix))
+        print('user replace start')
         self.data.replace({"user": user_uniq_ix})
     
         item_uniq = self.data['item'].unique()
         item_ix = [num for num in range(len(item_uniq))]
         #user_ix_uniq = dict(zip(user_ix, user_uniq))
         item_uniq_ix = dict(zip(item_uniq, item_ix))
+        print('item replace start')
         self.data.replace({"item": item_uniq_ix})
-    
+        print('item replace end')
         self.data['user'] = self.data['user'] 
         self.data['item'] = self.data['item'] 
+        print('user=user, item=item end')
         #self.user_count = self.data['user'].max() + 1
         #self.book_count = self.data['item'].max() + 1
         self.user_count = len(self.data['user'].unique())
@@ -73,6 +75,7 @@ class EmbeddingsGenerator:
         context: user's history with one random book removed
         target: id of random removed book
         '''
+        print('generate input')
         user_books_count = len(self.user_books[user])
         # picking random book
         random_index = np.random.randint(0, user_books_count - 1) # -1 avoids taking the las book
@@ -88,6 +91,7 @@ class EmbeddingsGenerator:
         '''
         Trains the model from train_users's history
         '''
+        print('train start')
         for i in range(nb_epochs):
             print('%d/%d' % (i+1, nb_epochs))
             #batch = [self.generate_input(user=np.random.choice(self.train_users) - 1) for _ in range(batch_size)]
@@ -142,3 +146,4 @@ print('Train set: Loss=%.4f ; Accuracy=%.1f%%' % (train_loss, train_accuracy * 1
 test_loss, test_accuracy = eg.test(dg.user_test)
 print('Test set; Loss=%.4f; Accuracy=%.1f%%' % (test_loss, test_accuracy * 100))
 eg.save_embeddings('embeddings.csv')
+

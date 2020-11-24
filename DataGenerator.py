@@ -21,7 +21,7 @@ class DataGenerator():
         self.histo = self.gen_histo()
         self.train = []
         self.test = []
-        self.data_small
+        #self.data_small
         
     
     def load_datas(self, datapath):
@@ -142,11 +142,11 @@ alpha = 0.5 # α (alpha) in Equation (1)
 gamma = 0.9 # Γ (Gamma) in Equation (4)
 buffer_size = 1000000 # Size of replay memory D in article
 fixed_length = True # Fixed memory length
-
+'''
 data_path ='./book_up20.csv'
 
 data = pd.read_csv(data_path, names={'item': int, 'user': str, 'rating': int, 'timestamp': int}, header=0)
-
+print("789")
 dg = DataGenerator(data_path)
 dg.gen_train_test(0.8, seed=42)
 
@@ -154,4 +154,4 @@ print(len(dg.train))
 print(len(dg.test))
 print('train: ', dg.train[:1])
 print('test:', dg.test[:1])
-
+'''
