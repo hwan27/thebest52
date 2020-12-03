@@ -52,7 +52,10 @@
  
 
 ### 코드리뷰
-https://github.com/egipcy/LIRD/blob/master/LIRD.ipynb
+1. LIRD : https://github.com/egipcy/LIRD/blob/master/LIRD.ipynb
+2. DRR : 
+  1)https://github.com/shashist/recsys-rl/tree/274341bc867ee81eeb14177ed79a14fe578464cd
+  2)https://github.com/bcsrn/RL_DDPG_Recommendation
 
 ### 구현
 
