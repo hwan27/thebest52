@@ -58,6 +58,7 @@
   2)https://github.com/bcsrn/RL_DDPG_Recommendation
 
 ### 구현
+- embedding by MF or Auto-Encoder with Aamazon book data
 
 ### 평가
 
