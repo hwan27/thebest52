@@ -27,8 +27,9 @@
 
 ### 참고 코드
 - https://github.com/luozachary/drl-rec
-- https://github.com/egipcy/LIRD
-- https://github.com/shashist/recsys-rl/blob/274341bc867ee81eeb14177ed79a14fe578464cd/recsys_rl.ipynb
+- [LIRD](https://github.com/egipcy/LIRD)
+- [DRR-shashist](https://github.com/shashist/recsys-rl/blob/274341bc867ee81eeb14177ed79a14fe578464cd/recsys_rl.ipynb)
+- [DRR-DDPG](https://github.com/bcsrn/RL_DDPG_Recommendation)
 
 
 ## MileStone
@@ -55,7 +56,8 @@
 ### 코드리뷰
 1. LIRD : https://github.com/egipcy/LIRD/blob/master/LIRD.ipynb
 2. DRR : 
-  1)https://github.com/shashist/recsys-rl/tree/274341bc867ee81eeb14177ed79a14fe578464cd
+  1)https://github.com/shashist/recsys-rl/tree/274341bc867ee81eeb14177ed79a14fe578464cd  
+  
   2)https://github.com/bcsrn/RL_DDPG_Recommendation
 
 ### 구현
@@ -79,5 +81,4 @@
 - 총 개수: 15,731,887
 - 유저수: 301,567
 - 아이템수: 1,615,039
-  
-## Branch 관리
+
