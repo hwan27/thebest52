@@ -19,15 +19,17 @@
 
 - Data: 각 user별로 남긴 평점을 시간순으로 정렬해 state, action, reward로 이루어진 train data 생성해서 사용
 
-### 논문
+### 참고 논문
 - Deep Neural Network for YouTube recommendation 
 - [Deep reinforcement learning based recommendation with Explicit User-item Interaction Modeling](https://arxiv.org/pdf/1810.12027.pdf)
 - [Top-K off-Policy Correction for a REINFORCE Recommender System](https://arxiv.org/pdf/1812.02353.pdf)
 - [Deep Reinforcement Learning for List-wise Recommendations](https://arxiv.org/abs/1801.00209)
 
-### AgileSoda 코드
+### 참고 코드
 - https://github.com/luozachary/drl-rec
-- https://github.com/egipcy/LIRD
+- [LIRD](https://github.com/egipcy/LIRD)
+- [DRR-shashist](https://github.com/shashist/recsys-rl/blob/274341bc867ee81eeb14177ed79a14fe578464cd/recsys_rl.ipynb)
+- [DRR-DDPG](https://github.com/bcsrn/RL_DDPG_Recommendation)
 
 
 ## MileStone
@@ -54,10 +56,12 @@
 ### 코드리뷰
 1. LIRD : https://github.com/egipcy/LIRD/blob/master/LIRD.ipynb
 2. DRR : 
-  1)https://github.com/shashist/recsys-rl/tree/274341bc867ee81eeb14177ed79a14fe578464cd
-  2)https://github.com/bcsrn/RL_DDPG_Recommendation
+  - https://github.com/shashist/recsys-rl/tree/274341bc867ee81eeb14177ed79a14fe578464cd  
+  - https://github.com/bcsrn/RL_DDPG_Recommendation
 
 ### 구현
+- embedding by MF or Auto-Encoder with Aamazon book data
+- recsys-rl 정확도 개선
 
 ### 평가
 
@@ -67,4 +71,13 @@
   - ratings only(51,311,621): item, user, rating, timestamp
   - matadata: asin, title, feature, description, price, image, related, salesRank, rand, categories, tech1, tech2, similar
   
-## Branch 관리
+### 원본 데이터
+- 총 개수: 51311621
+- 유저수: 15,362,619
+- 아이템수: 2,930,451
+
+### rating 20 이상 데이터
+- 총 개수: 15,731,887
+- 유저수: 301,567
+- 아이템수: 1,615,039
+
