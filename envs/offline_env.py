@@ -10,8 +10,8 @@ class OfflineEnv:
         self.users_dict = users_dict
         
         self.data = next(self.dataloader) # {'item':items,'rating':ratings,'size':size,'userid':user_id,'idx':idx}
-        self.user_history = self.users_dict[self.data['userid'][0]]
-
+        self.user_history = self.users_dict[int(self.data['userid'])]
+        
         self.item_embedding = torch.Tensor([np.array(item_embeddings_dict[item]) for item in users_dict[int(self.data['userid'][0])]['item']])
         self.items = self.item_embedding.T.unsqueeze(0)
 
@@ -23,8 +23,8 @@ class OfflineEnv:
     
     def generate_related_books(self):
         related_movie = []
-        items = self.user_history['items'][10:]
-        ratings = self.user_history['ratings'][10:]
+        items = self.user_history['item'][10:]
+        ratings = self.user_history['rating'][10:]
 
         for item, rating in zip(items, ratings):
             if rating > 3:
@@ -35,14 +35,16 @@ class OfflineEnv:
     def reset(self):
         self.data = next(self.dataloader)
         self.memory = [item[0] for item in self.data['item']]
-        self.user_history = self.users_dict[self.data['userid'][0]]
+        self.user_history = self.users_dict[int(self.data['userid'])]
         self.done = 0
+        self.item_embedding = torch.Tensor([np.array(item_embeddings_dict[item]) for item in users_dict[int(self.data['userid'][0])]['item']])
+        self.items = self.item_embedding.T.unsqueeze(0)
         self.related_books = self.generate_related_books()
         self.viewed_pos_books = []
 
     def update_memory(self,action):
-        self.memory = list(self.memory[1:])+[action]
-    
+        self.memory = list(self.memory[1:]) + [self.user_history['item'][action]]
+        
     def step(self, action):
         
         ### Env : step
