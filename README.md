@@ -1,5 +1,6 @@
 ## 강화학습(Actor-Critic Network)을 기반으로 하는 추천 시스템 
 
+[DDPG_recsys.ipynb](https://github.com/hwan27/thebest52/blob/master/DDPG_recsys.ipynb)
 
 ## Team 
 
