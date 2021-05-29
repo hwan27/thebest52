@@ -10,10 +10,6 @@
 - 이휘준
 - 이은성
 
-### 해커톤 우수팀 선정
-
-<img width="550" alt="KakaoTalk_Image_2020-12-29-19-14-24" src="https://user-images.githubusercontent.com/42932125/103276501-16591f80-4a0a-11eb-80f0-d12feae1e374.png">  
-
 ## AgileSoDa 제안
 - user의 과거 기록들을 이용해 하나의 카테고리(Book)에서의 아이템들 Rangking을 주어 Top K개를 추천, user의 구매를 유도하는 알고리즘
 
